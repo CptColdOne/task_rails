@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+=begin
 authors = Author.create([{name: 'a1'}, {name: 'a2'}, {name: 'a3'}, {name: 'a4'}, {name: 'a5'}, {name: 'a6'}, {name: 'a7'}, {name: 'a8'}, {name: 'a9'}, {name: 'a10'}])
 books = Book.create([{name: 'b1', author_id: 1}, {name: 'b2', author_id: 1}, {name: 'b3', author_id: 1}, {name: 'b4', author_id: 1}, {name: 'b5', author_id: 1}, {name: 'b6', author_id: 1}, {name: 'b7', author_id: 1}, {name: 'b8', author_id: 1}, {name: 'b9', author_id: 1}, {name: 'b10', author_id: 1},
     {name: 'b1', author_id: 2}, {name: 'b2', author_id: 2}, {name: 'b3', author_id: 2}, {name: 'b4', author_id: 2}, {name: 'b5', author_id: 2}, {name: 'b6', author_id: 2}, {name: 'b7', author_id: 2}, {name: 'b8', author_id: 2}, {name: 'b9', author_id: 2}, {name: 'b10', author_id: 2},
@@ -18,3 +19,16 @@ books = Book.create([{name: 'b1', author_id: 1}, {name: 'b2', author_id: 1}, {na
     {name: 'b1', author_id: 9}, {name: 'b2', author_id: 9}, {name: 'b3', author_id: 9}, {name: 'b4', author_id: 9}, {name: 'b5', author_id: 9}, {name: 'b6', author_id: 9}, {name: 'b7', author_id: 9}, {name: 'b8', author_id: 9}, {name: 'b9', author_id: 9}, {name: 'b10', author_id: 9},
     {name: 'b1', author_id: 10}, {name: 'b2', author_id: 10}, {name: 'b3', author_id: 10}, {name: 'b4', author_id: 10}, {name: 'b5', author_id: 10}, {name: 'b6', author_id: 10}, {name: 'b7', author_id: 10}, {name: 'b8', author_id: 10}, {name: 'b9', author_id: 10}, {name: 'b10', author_id: 10},
 ])
+=end
+authors_list = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10']
+books_list = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10']
+
+authors_list.each do |name|
+    Author.create(name: name)
+end
+
+10.times do |id|
+    books_list.each do |book|
+        Book.create(name: book, author_id: id)
+    end
+end
